@@ -1,0 +1,17 @@
+{
+  "budget": 1,
+  "window": 3,
+  "full_error_code": "E_WINDOW_FULL",
+  "ack_error_code": "E_UNKNOWN_ACK",
+  "event_error_code": "E_BAD_EVENT",
+  "state": { "next": 1, "inflight": [], "acked": [], "retransmitted": [], "pending": [], "ledger": [], "applied": [] },
+  "events": [
+    { "id": 1, "kind": "send" },
+    { "id": 2, "kind": "send" },
+    { "id": 3, "kind": "send" },
+    { "id": 4, "kind": "timeout" },
+    { "id": 5, "kind": "ack", "upto": 3 },
+    { "id": 6, "kind": "send" },
+    { "id": 7, "kind": "timeout" }
+  ]
+}
