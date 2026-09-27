@@ -1,8 +1,12 @@
-// winack.js：窗口判定与累计确认（基线：一律说能发、一律原样返回）
 export function canSend(inflight, window) {
-  return true;
+  return inflight.length < window;
 }
 
 export function splitAck(inflight, upto) {
-  return [[], inflight];
+  const ackedPart = [];
+  const stillInflight = [];
+  for (const seq of inflight) {
+    (seq <= upto ? ackedPart : stillInflight).push(seq);
+  }
+  return [ackedPart, stillInflight];
 }
